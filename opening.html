@@ -48,6 +48,7 @@
         if(get_name !== null){
             $('#n').text('Welcome back, '+get_name);
             $('#nameForm').hide();
+            // window.open("info.html","_self");
             }
         }
 
@@ -59,6 +60,7 @@
         localStorage.setItem("my_name",myName);
         $('#nameForm').remove();
         alert("Nice to meet you, "+localStorage.getItem('my_name'));
+        // window.open("info.html","_self");
         });
 
         
