@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <style>
     .container {
@@ -15,6 +17,7 @@
     }
     img {
         height: 420px;
+        position: relative;
     }
     #wat_logo {
       height: 168px;
@@ -33,6 +36,18 @@
     .card-body {
       height: 184px;
 
+    }
+    .checkBox{
+      position:absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .complete-img{
+      position: absolute;
+      width: 250px;
+      height: 100px;
+      top: -10px;
+      left: 130px
     }
 </style>
 <body>
@@ -61,6 +76,9 @@
           <div class="card-deck">
                 <div class="card">
                   <img src="romance_drama/about time.jpg" class="card-img-top" alt="Dark Knight">
+                  <div class="checkBox">
+                    <input type="checkbox" value="chkMymovie">
+                  </div>
                   <div class="card-body">
                     <h5 class="card-title">어바웃 타임</h5>
                     <p class="card-text">어떠한 순간을 다시 살게 된다면, <br>과연 완벽한 사랑을 이룰 수 있을까?</p>
@@ -69,6 +87,9 @@
                 </div>
                 <div class="card">
                   <img src="romance_drama/classic.jpg" class="card-img-top" alt="Django">
+                  <div class="checkBox">
+                    <input type="checkbox" value="chkMymovie">
+                  </div>
                   <div class="card-body">
                     <h5 class="card-title">클래식</h5>
                     <p class="card-text">우연히, 우연히, 우연히... <br>그러나... 반드시 잊혀진 약속이 깨어났다.</p>
@@ -77,6 +98,9 @@
                 </div>
                 <div class="card">
                   <img src="romance_drama/eternal.png".jpg" class="card-img-top" alt="Mad Max Fury Road">
+                  <div class="checkBox">
+                    <input type="checkbox" value="chkMymovie">
+                  </div>
                   <div class="card-body">
                     <h5 class="card-title">이터널 선샤인</h5>
                     <p class="card-text">사랑은 그렇게 다시 기억된다..</p>
@@ -87,6 +111,9 @@
               <div class="card-deck">
                   <div class="card">
                     <img src="romance_drama/Forrest_Gump.jpg" class="card-img-top" alt="gladiator">
+                    <div class="checkBox">
+                      <input type="checkbox" value="chkMymovie">
+                    </div>
                     <div class="card-body">
                       <h5 class="card-title">포레스트 검프</h5>
                       <p class="card-text">진정한 삶의 가치와 의미를 <br>제시하는 감동 바이블!</p>
@@ -95,6 +122,9 @@
                   </div>
                   <div class="card">
                     <img src="romance_drama/grand.jpg" class="card-img-top" alt="robocop">
+                    <div class="checkBox">
+                      <input type="checkbox" value="chkMymovie">
+                    </div>
                     <div class="card-body">
                       <h5 class="card-title">그랜드 부다페스트 호텔</h5>
                       <p class="card-text">세계 최고 부호 마담 D.의 피살사건!<br>
@@ -104,6 +134,9 @@
                   </div>
                   <div class="card">
                     <img src="romance_drama/La_la_land.jpg" class="card-img-top" alt="terminator">
+                    <div class="checkBox">
+                      <input type="checkbox" value="chkMymovie">
+                    </div>
                     <div class="card-body">
                       <h5 class="card-title">라라랜드</h5>
                       <p class="card-text">황홀한 사랑, 순수한 희망, 격렬한 열정… <br>
@@ -115,6 +148,9 @@
                 <div class="card-deck">
                     <div class="card">
                       <img src="romance_drama/life.jpg" class="card-img-top" alt="terminator2">
+                      <div class="checkBox">
+                        <input type="checkbox" value="chkMymovie">
+                      </div>
                       <div class="card-body">
                         <h5 class="card-title">인생은 아름다워</h5>
                         <p class="card-text">전세계를 울린 위대한 사랑, <br>
@@ -124,6 +160,9 @@
                     </div>
                     <div class="card">
                       <img src="romance_drama/pianist.jpg" class="card-img-top" alt="total recall">
+                      <div class="checkBox">
+                        <input type="checkbox" value="chkMymovie">
+                      </div>
                       <div class="card-body">
                         <h5 class="card-title">피아니스트</h5>
                         <p class="card-text">영혼을 움직이는 선율! <br> 전 세계를 울린 감동 실화극!</p>
@@ -132,6 +171,9 @@
                     </div>
                     <div class="card">
                       <img src="romance_drama/toy story.jpg" class="card-img-top" alt="total recall">
+                      <div class="checkBox">
+                        <input type="checkbox" value="chkMymovie">
+                      </div>
                       <div class="card-body">
                         <h5 class="card-title">토이스토리</h5>
                         <p class="card-text">장난감이 살아있다면??</p>
@@ -142,6 +184,9 @@
                 <div class="card-deck">
                   <div class="card">
                     <img src="romance_drama/WhiteChicks.jpg" class="card-img-top" alt="terminator2">
+                    <div class="checkBox">
+                      <input type="checkbox" value="chkMymovie">
+                    </div>
                     <div class="card-body">
                       <h5 class="card-title">화이트 칙스</h5>
                       <p class="card-text">짱나는 미녀들 대신 화이트로 변신한 <br> 
@@ -152,6 +197,9 @@
                   </div>
                   <div class="card">
                     <img src="romance_drama/아가씨.jpg" class="card-img-top" alt="total recall">
+                    <div class="checkBox">
+                      <input type="checkbox" value="chkMymovie">
+                    </div>
                     <div class="card-body">
                       <h5 class="card-title">아가씨</h5>
                       <p class="card-text">돈과 마음을 뺏기 위해 서로 속고 속이는 <br>
@@ -161,6 +209,9 @@
                   </div>
                   <div class="card">
                     <img src="romance_drama/화양연화.jpg" class="card-img-top" alt="total recall">
+                    <div class="checkBox">
+                      <input type="checkbox" value="chkMymovie">
+                    </div>
                     <div class="card-body">
                       <h5 class="card-title">화양연화</h5>
                       <p class="card-text">느리지만 진한, 드러나진 않지만 깊은 사랑이 시작된다!</p>
@@ -173,6 +224,26 @@
     </main>
   </div>
 
+
+
+<script type="text/javascript">
+ $('input:checkbox').change(
+    function(){
+        if ($(this).is(':checked')) {
+          $(this).parent().siblings().css('opacity', '0.1');
+          $(this).parent().parent().prepend('<img src="completed.png" class="complete-img">');
+        }
+        else{
+          $(this).parent().siblings().css('opacity', '1');
+          $(this).parent().parent().find(".complete-img").remove();
+        }
+    });
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -206,5 +277,6 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>
