@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>오늘 뭐 볼까? 오.까!</title>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -16,6 +16,7 @@
     }
     img {
         height: 420px;
+        position: relative;
     }
     #wat_logo {
       height: 168px;
@@ -34,6 +35,18 @@
     .card-body {
       height: 184px;
 
+    }
+    .checkBox{
+      position:absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .complete-img{
+      position: absolute;
+      width: 250px;
+      height: 100px;
+      top: -10px;
+      left: 130px
     }
 </style>
 <body>
@@ -59,6 +72,9 @@
           <div class="card-deck">
                 <div class="card">
                   <img src="fantasy_sf/ai.jpg" class="card-img-top" alt="A.I.">
+                  <div class="checkBox">
+                      <input type="checkbox" value="chkMymovie">
+                    </div>
                   <div class="card-body">
                     <h5 class="card-title">A.I.</h5>
                     <p class="card-text">인공지능 로봇은 사람이 될 수 있을까?</p>
@@ -67,6 +83,9 @@
                 </div>
                 <div class="card">
                   <img src="fantasy_sf/avatar.jpg" class="card-img-top" alt="Avatar">
+                  <div class="checkBox">
+                      <input type="checkbox" value="chkMymovie">
+                    </div>
                   <div class="card-body">
                     <h5 class="card-title">아바타</h5>
                     <p class="card-text">그들과 함께 살아갈 자격</p>
@@ -75,6 +94,9 @@
                 </div>
                 <div class="card">
                   <img src="fantasy_sf/gravity.jpg" class="card-img-top" alt="Gravity">
+                  <div class="checkBox">
+                      <input type="checkbox" value="chkMymovie">
+                    </div>
                   <div class="card-body">
                     <h5 class="card-title">그래비티</h5>
                     <p class="card-text">"어떤 영화는 관람이 아니라 체험된다."</p>
@@ -85,6 +107,9 @@
               <div class="card-deck">
                   <div class="card">
                     <img src="fantasy_sf/inception.jpg" class="card-img-top" alt="Inception">
+                    <div class="checkBox">
+                        <input type="checkbox" value="chkMymovie">
+                      </div>
                     <div class="card-body">
                       <h5 class="card-title">인셉션</h5>
                       <p class="card-text">생각을 훔치는 거대한 전쟁</p>
@@ -93,6 +118,9 @@
                   </div>
                   <div class="card">
                     <img src="fantasy_sf/lotr.png" class="card-img-top" alt="The Lord of the Ring">
+                    <div class="checkBox">
+                        <input type="checkbox" value="chkMymovie">
+                      </div>
                     <div class="card-body">
                       <h5 class="card-title">반지의 제왕</h5>
                       <p class="card-text">두 말이 필요 없는 톨킨 소설 원작의 전설적인 판타지 영화</p>
@@ -101,6 +129,9 @@
                   </div>
                   <div class="card">
                     <img src="fantasy_sf/matrix.jpg" class="card-img-top" alt="Matrix">
+                    <div class="checkBox">
+                        <input type="checkbox" value="chkMymovie">
+                      </div>
                     <div class="card-body">
                       <h5 class="card-title">매트릭스</h5>
                       <p class="card-text">우리가 살고 있는 세상은 '진짜'인가?</p>
@@ -111,6 +142,9 @@
                 <div class="card-deck">
                     <div class="card">
                       <img src="fantasy_sf/mfe.png" class="card-img-top" alt="Man from Earth">
+                      <div class="checkBox">
+                          <input type="checkbox" value="chkMymovie">
+                        </div>
                       <div class="card-body">
                         <h5 class="card-title">맨프롬어스</h5>
                         <p class="card-text">그저 남자의 이야기를 들을 뿐</p>
@@ -119,6 +153,9 @@
                     </div>
                     <div class="card">
                       <img src="fantasy_sf/sen.jpg" class="card-img-top" alt="Spirited Away">
+                      <div class="checkBox">
+                          <input type="checkbox" value="chkMymovie">
+                        </div>
                       <div class="card-body">
                         <h5 class="card-title">센과 치히로의 행방불명</h5>
                         <p class="card-text">어른이 되어서도 다시 보면 새로운 영화</p>
@@ -127,6 +164,9 @@
                     </div>
                     <div class="card">
                         <img src="fantasy_sf/vampire.jpg" class="card-img-top" alt="Intervew with the Vampire">
+                        <div class="checkBox">
+                            <input type="checkbox" value="chkMymovie">
+                          </div>
                         <div class="card-body">
                           <h5 class="card-title">뱀파이어와의 인터뷰</h5>
                           <p class="card-text">지성적이고 매혹적인 새로운 존재의 시작</p>
@@ -167,7 +207,20 @@
       
 <script type="text/javascript">
   
-  
+  //check box format
+ $('input:checkbox').change(
+    function(){
+        if ($(this).is(':checked')) {
+          $(this).parent().siblings().css('opacity', '0.1');
+          $(this).parent().parent().prepend('<img src="completed.png" class="complete-img">');
+        }
+        else{
+          $(this).parent().siblings().css('opacity', '1');
+          $(this).parent().parent().find(".complete-img").remove();
+        }
+    });
+
+//random list selector
   var p_list = ["action.html", "crime.html", "fantasy_sf.html", "horror.html", "romance.html"];
   var random_list=[];
   for (p=0; p<5; p++) {

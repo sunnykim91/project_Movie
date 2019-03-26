@@ -16,6 +16,7 @@
     }
     img {
         height: 420px;
+        position: relative;
     }
     #wat_logo {
       height: 168px;
@@ -34,6 +35,18 @@
     .card-body {
       height: 184px;
 
+    }
+    .checkBox{
+      position:absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .complete-img{
+      position: absolute;
+      width: 250px;
+      height: 100px;
+      top: -10px;
+      left: 130px
     }
 </style>
 <body>
@@ -59,6 +72,9 @@
         <div class="card-deck">
               <div class="card">
                 <img src="horror/alien.jpg" class="card-img-top" alt="Alien">
+                <div class="checkBox">
+                    <input type="checkbox" value="chkMymovie">
+                  </div>
                 <div class="card-body">
                   <h5 class="card-title">에일리언</h5>
                   <p class="card-text">우주에서는 아무도 당신의 비명을 듣지 못한다.</p>
@@ -67,6 +83,9 @@
               </div>
               <div class="card">
                 <img src="horror/cabin.jpg" class="card-img-top" alt="Cabin in the Woods">
+                <div class="checkBox">
+                    <input type="checkbox" value="chkMymovie">
+                  </div>
                 <div class="card-body">
                   <h5 class="card-title">캐빈 인더 우즈</h5>
                   <p class="card-text">뻔하지 않은 크리쳐 영화</p>
@@ -75,6 +94,9 @@
               </div>
               <div class="card">
                 <img src="horror/devil.jpg" class="card-img-top" alt="I Saw the Devil">
+                <div class="checkBox">
+                    <input type="checkbox" value="chkMymovie">
+                  </div>
                 <div class="card-body">
                   <h5 class="card-title">악마를 보았다</h5>
                   <p class="card-text">복수의 두 얼굴, 광기의 대결</p>
@@ -85,6 +107,9 @@
             <div class="card-deck">
                 <div class="card">
                   <img src="horror/getout.jpg" class="card-img-top" alt="Get Out">
+                  <div class="checkBox">
+                      <input type="checkbox" value="chkMymovie">
+                    </div>
                   <div class="card-body">
                     <h5 class="card-title">겟아웃</h5>
                     <p class="card-text">제목의 의미</p>
@@ -93,6 +118,9 @@
                 </div>
                 <div class="card">
                   <img src="horror/paranormal.jpg" class="card-img-top" alt="Paranormal Activity">
+                  <div class="checkBox">
+                      <input type="checkbox" value="chkMymovie">
+                    </div>
                   <div class="card-body">
                     <h5 class="card-title">파라노말 액티비티</h5>
                     <p class="card-text">보고 나면 더 무서운 영화</p>
@@ -101,6 +129,9 @@
                 </div>
                 <div class="card">
                   <img src="horror/shining.jpg" class="card-img-top" alt="Shining">
+                  <div class="checkBox">
+                      <input type="checkbox" value="chkMymovie">
+                    </div>
                   <div class="card-body">
                     <h5 class="card-title">샤이닝</h5>
                     <p class="card-text">스릴러 영화의 바이블</p>
@@ -111,6 +142,9 @@
               <div class="card-deck">
                   <div class="card">
                     <img src="horror/sixth.png" class="card-img-top" alt="Sixth Sense">
+                    <div class="checkBox">
+                        <input type="checkbox" value="chkMymovie">
+                      </div>
                     <div class="card-body">
                       <h5 class="card-title">식스센스</h5>
                       <p class="card-text">영화 안 본 뇌 삽니다. 알고 봐도 재밌는 영화.</p>
@@ -119,6 +153,9 @@
                   </div>
                   <div class="card">
                     <img src="horror/the thing.jpg" class="card-img-top" alt="The Thing">
+                    <div class="checkBox">
+                        <input type="checkbox" value="chkMymovie">
+                      </div>
                     <div class="card-body">
                       <h5 class="card-title">The Thing</h5>
                       <p class="card-text">알 수 없는 "무언가" 가 주는 공포</p>
@@ -127,6 +164,9 @@
                   </div>
                   <div class="card">
                       <img src="horror/곡성.jpg" class="card-img-top" alt="곡성">
+                      <div class="checkBox">
+                        <input type="checkbox" value="chkMymovie">
+                      </div>
                       <div class="card-body">
                         <h5 class="card-title">곡성</h5>
                         <p class="card-text">그 누구도 믿을 수 없고 믿어선 안 된다</p>
@@ -167,7 +207,20 @@
       
 <script type="text/javascript">
   
-  
+  //check box format
+ $('input:checkbox').change(
+    function(){
+        if ($(this).is(':checked')) {
+          $(this).parent().siblings().css('opacity', '0.1');
+          $(this).parent().parent().prepend('<img src="completed.png" class="complete-img">');
+        }
+        else{
+          $(this).parent().siblings().css('opacity', '1');
+          $(this).parent().parent().find(".complete-img").remove();
+        }
+    });
+
+//random list selector
   var p_list = ["action.html", "crime.html", "fantasy_sf.html", "horror.html", "romance.html"];
   var random_list=[];
   for (p=0; p<5; p++) {

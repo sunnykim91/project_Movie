@@ -16,6 +16,7 @@
     }
     img {
         height: 420px;
+        position: relative;
     }
     #wat_logo {
       height: 168px;
@@ -33,6 +34,18 @@
     }
     .card-body {
       height: 184px;
+    }
+    .checkBox{
+      position:absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .complete-img{
+      position: absolute;
+      width: 250px;
+      height: 100px;
+      top: -10px;
+      left: 130px
     }
 </style>
 <body>
@@ -60,6 +73,9 @@
           <div class="card-deck">
                 <div class="card">
                   <img src="image/bat.jpg" class="card-img-top" alt="Dark Knight">
+                  <div class="checkBox">
+                      <input type="checkbox" value="chkMymovie">
+                    </div>
                   <div class="card-body">
                     <h5 class="card-title">다크 나이트</h5>
                     <p class="card-text">why so serious?</p>
@@ -68,6 +84,9 @@
                 </div>
                 <div class="card">
                   <img src="image/django.jpg" class="card-img-top" alt="Django">
+                  <div class="checkBox">
+                      <input type="checkbox" value="chkMymovie">
+                    </div>
                   <div class="card-body">
                     <h5 class="card-title">쟝고 - 분노의 추적자</h5>
                     <p class="card-text">디카프리오가 주인공인줄 알고 영화보다가 웃고 나옴.</p>
@@ -76,6 +95,9 @@
                 </div>
                 <div class="card">
                   <img src="image/mad_max.jpg" class="card-img-top" alt="Mad Max Fury Road">
+                  <div class="checkBox">
+                      <input type="checkbox" value="chkMymovie">
+                    </div>
                   <div class="card-body">
                     <h5 class="card-title">매드맥스 - 분노의 도로</h5>
                     <p class="card-text">8기통! 8기통!!</p>
@@ -86,6 +108,9 @@
               <div class="card-deck">
                   <div class="card">
                     <img src="image/gladiator.png" class="card-img-top" alt="gladiator">
+                    <div class="checkBox">
+                        <input type="checkbox" value="chkMymovie">
+                      </div>
                     <div class="card-body">
                       <h5 class="card-title">글래디에이터</h5>
                       <p class="card-text">목숨걸고 싸우는 검투사 이야기</p>
@@ -94,6 +119,9 @@
                   </div>
                   <div class="card">
                     <img src="image/robocop.jpg" class="card-img-top" alt="robocop">
+                    <div class="checkBox">
+                        <input type="checkbox" value="chkMymovie">
+                      </div>
                     <div class="card-body">
                       <h5 class="card-title">로보캅</h5>
                       <p class="card-text">I'm robocop!</p>
@@ -102,6 +130,9 @@
                   </div>
                   <div class="card">
                     <img src="image/terminator.jpg" class="card-img-top" alt="terminator">
+                    <div class="checkBox">
+                        <input type="checkbox" value="chkMymovie">
+                      </div>
                     <div class="card-body">
                       <h5 class="card-title">터미네이터</h5>
                       <p class="card-text">Are you John Corner?</p>
@@ -112,6 +143,9 @@
                 <div class="card-deck">
                     <div class="card">
                       <img src="image/terminator2.jpg" class="card-img-top" alt="terminator2">
+                      <div class="checkBox">
+                          <input type="checkbox" value="chkMymovie">
+                        </div>
                       <div class="card-body">
                         <h5 class="card-title">터미네이터2</h5>
                         <p class="card-text">Sarah Corner sent me here!</p>
@@ -120,6 +154,9 @@
                     </div>
                     <div class="card">
                       <img src="image/total_recall.jpg" class="card-img-top" alt="total recall">
+                      <div class="checkBox">
+                          <input type="checkbox" value="chkMymovie">
+                        </div>
                       <div class="card-body">
                         <h5 class="card-title">토탈 리콜</h5>
                         <p class="card-text">화성에... 던져지면... 몸이.. 부푼다... 메모</p>
@@ -128,6 +165,9 @@
                     </div>
                     <div class="card">
                       <img src="image/equil.jpg" class="card-img-top" alt="equillibrium">
+                      <div class="checkBox">
+                          <input type="checkbox" value="chkMymovie">
+                        </div>
                       <div class="card-body">
                         <h5 class="card-title">이퀼리브리엄</h5>
                         <p class="card-text">주인공이 쏘면 총을 돌리면서 쏴도 다 맞음. 그냥 다 맞음.</p>
@@ -166,7 +206,20 @@
       
 <script type="text/javascript">
   
-  
+  //check box format
+ $('input:checkbox').change(
+    function(){
+        if ($(this).is(':checked')) {
+          $(this).parent().siblings().css('opacity', '0.1');
+          $(this).parent().parent().prepend('<img src="completed.png" class="complete-img">');
+        }
+        else{
+          $(this).parent().siblings().css('opacity', '1');
+          $(this).parent().parent().find(".complete-img").remove();
+        }
+    });
+
+//random list selector
   var p_list = ["action.html", "crime.html", "fantasy_sf.html", "horror.html", "romance.html"];
   var random_list=[];
   for (p=0; p<5; p++) {
