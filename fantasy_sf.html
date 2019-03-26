@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>오늘 뭐 볼까? 오.까!</title>
-
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
@@ -41,7 +42,7 @@
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title"><a href="info.html"><img src="오까.png" alt="logo" id=wat_logo></a></span>
       <nav class="mdl-navigation">
-        <button type="button" class="btn btn-outline-info" id="btn_random">오늘은 이거다! 랜덤영화</button>
+        <button type="button" class="btn btn-outline-info" id="btn_random" data-toggle="modal" data-target="#exampleModalCenter">오늘은 이거다! 랜덤영화</button>
         <a class="mdl-navigation__link" href="action.html">액션</a>
         <a class="mdl-navigation__link" href="crime.html">범죄/스릴러</a>
         <a class="mdl-navigation__link" href="horror.html">공포</a>
@@ -140,7 +141,52 @@
     </main>
   </div>
 
-
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">랜덤 영화 추천</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>오늘은</p>
+            <h2 id="random_title"></h2>
+            <p>꼭 봐!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="random_movie">랜덤 영화 뽑기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+<script type="text/javascript">
+  
+  
+  var p_list = ["action.html", "crime.html", "fantasy_sf.html", "horror.html", "romance.html"];
+  var random_list=[];
+  for (p=0; p<5; p++) {
+  $.get(p_list[p], function(data) {
+    var test = $(data);
+    var m_title = test.find('.card-title');
+    for (var i in m_title) {
+      if(typeof(m_title[i].innerHTML) == "string") {
+        random_list.push(m_title[i].innerHTML);
+        
+      }
+    }
+  })
+  };
+  $("#random_movie").click(function() {
+    var n = Math.floor(Math.random()*random_list.length);
+  $("#random_title").text(random_list[n]);
+  });
+</script>
 
 
 
