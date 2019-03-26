@@ -16,6 +16,14 @@
     img {
         height: 420px;
     }
+    #wat_logo {
+      height: 168px;
+      margin-top: 15%;
+    }
+    #btn_random {
+      align-self: center;
+      width:13em;
+    }
     .card-deck {
         margin-top: 2%;
     }
@@ -24,19 +32,20 @@
     }
     .card-body {
       height: 184px;
-
     }
 </style>
 <body>
     <!-- No header, and the drawer stays open on larger screens (fixed drawer). -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
     <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title" style="font-size:25px;">오늘 뭐 볼까?</span>
+      <span class="mdl-layout-title"><a href="info.html"><img src="오까.png" alt="logo" id=wat_logo></a></span>
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">오늘은 이거다 랜덤 영화</a>
+        <button type="button" class="btn btn-outline-info" id="btn_random">오늘은 이거다! 랜덤영화</button>
         <a class="mdl-navigation__link" href="action.html">액션</a>
-        <a class="mdl-navigation__link" href="">범죄/스릴러</a>
-        <a class="mdl-navigation__link" href="">공포</a>
+
+        <a class="mdl-navigation__link" href="crime.html">범죄/스릴러</a>
+        <a class="mdl-navigation__link" href="horror.html">공포</a>
+
         <a class="mdl-navigation__link" href="romance.html">로맨스/드라마</a>
         <a class="mdl-navigation__link" href="fantasy_sf.html">판타지/SF</a>
       </nav>
