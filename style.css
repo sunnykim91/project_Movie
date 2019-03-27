@@ -72,6 +72,7 @@
         font-size:2em;
         padding-left: 2em;
         margin-top:0.5em;
+
         font-family: 'Poor Story', cursive;
     }
     .mdl-layout__content{
@@ -92,3 +93,4 @@
     color:deeppink;
   }
   @font-face { font-family: 'YiSunShinDotumM'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YiSunShinDotumM.woff') format('woff'); font-weight: normal; font-style: normal; }
+
