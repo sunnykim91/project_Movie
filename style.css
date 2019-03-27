@@ -57,7 +57,17 @@
         font-size:1.5em;
         padding-left: 2em;
         margin-top:0.5em;
-
-
     }
-
+    .modal-body {
+        text-align: center;
+    }
+    #random_title {
+        color:rgb(103, 61, 116);
+    }
+    .text1 {
+        font-size:2em;
+    }
+    .text2 {
+        font-size: 2em;
+    }
+    
