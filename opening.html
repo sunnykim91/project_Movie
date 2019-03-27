@@ -44,7 +44,7 @@
         $(function(){
 
         function name(){
-        var get_name = localStorage.getItem("my_name");
+        var get_name = JSON.parse(localStorage.getItem("my_name"));
         if(get_name !== null){
             $('#n').text('Welcome back, '+get_name);
             $('#nameForm').hide();
@@ -57,9 +57,9 @@
         $("#nameForm").submit(function(e){
         e.preventDefault;
         var myName = document.getElementById("sample3").value;
-        localStorage.setItem("my_name",myName);
+        localStorage.setItem("my_name",JSON.stringify(myName));
         $('#nameForm').remove();
-        alert("Nice to meet you, "+localStorage.getItem('my_name'));
+        alert("Nice to meet you, "+JSON.parse(localStorage.getItem('my_name')));
         // window.open("info.html","_self");
         });
 
