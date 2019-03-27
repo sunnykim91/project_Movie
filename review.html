@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>오늘 뭐 볼까? 오.까!</title>
 
-
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Pen+Script|Poor+Story" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -37,7 +37,7 @@
         <div class="page-content">
           <!-- Your content goes here -->
           <div class="container">
-              <p style="font-size:25px;">나의 리뷰</p>
+              <p id="page_title">나의 리뷰</p>
           <hr>
           <div id="show_review">
             <!--리뷰 하나씩 div 할당-->
@@ -75,16 +75,16 @@
 <script type="text/javascript">
 for (var key of Object.keys(localStorage)){
 var loadReview = JSON.parse(localStorage.getItem(key));
-
+if(key !== "my_name"){
  var x = '<div class="reviewcss">'
-      + '<span class="title_review">'+ Object.keys(loadReview)[0]+'</span><br>'
+      + '<span class="title_review"><em>'+ Object.keys(loadReview)[0]+'</em></span><br>'
       
       + '<span class="content_review"><i class="fas fa-angle-double-right"></i>&nbsp;'+loadReview[key] +'</span><br>' 
       + '</div>';
 $("#show_review").append(x);
-
-console.log(Object.keys(loadReview)[0]);
-console.log(loadReview[key]);
+ }
+// console.log(Object.keys(loadReview)[0]);
+//console.log(loadReview[key]);
 }
 
 </script>
