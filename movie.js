@@ -3,11 +3,11 @@ function load(){
     var check_m = JSON.parse(localStorage.getItem(i));
       for(var m of $(".card-title")){
         if(Object.keys(check_m)[0] == m.innerHTML){
-        $(m).parent().css('opacity', '0.1'); 
+        $(m).parent().css('opacity', '0.2'); 
         // card-title 태그의 부모의 card-body 에 투명도
-        $(m).parent().siblings("img").css('opacity', '0.1'); 
+        $(m).parent().siblings("img").css('opacity', '0.2'); 
         // card-title 의 부모의 형제들 중 img 태그에 투명도
-        $(m).parent().parent().prepend('<img src="completed.png" class="complete-img">');
+        $(m).parent().parent().prepend('<img src="completed2.png" class="complete-img">');
         // 포스터 사진 위에 comeplete 이미지 추가
         }
       }
@@ -18,14 +18,14 @@ load();
 //check box format
   var checkbox;
   $('input:checkbox').click(function() {
-      checkbox = $(this)
+      checkbox = $(this);
   })
   $('input:checkbox').change(
     function(){
         if ($(this).is(':checked')) {
          
-          $(this).parent().siblings().css('opacity', '0.1');
-          $(this).parent().parent().prepend('<img src="completed.png" class="complete-img">');
+          $(this).parent().siblings().css('opacity', '0.2');
+          $(this).parent().parent().prepend('<img src="completed2.png" class="complete-img">');
           var dialog = document.querySelector('dialog');
          var showDialogButton = document.querySelector('#show-dialog');
          if (! dialog.showModal) {
