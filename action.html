@@ -213,7 +213,7 @@
           </div>
           <div class="modal-body">
             <p>오늘은</p>
-            <h2 id="random_title"></h2>
+            <h3 id="random_title"></h3>
             <p>꼭 봐!</p>
           </div>
           <div class="modal-footer">
@@ -225,63 +225,10 @@
     </div>
   </div>
       
-<script type="text/javascript">
-  
-  //check box format
-  $('input:checkbox').change(
-    function(){
-        if ($(this).is(':checked')) {
-          $(this).parent().siblings().css('opacity', '0.1');
-          $(this).parent().parent().prepend('<img src="completed.png" class="complete-img">');
-          var dialog = document.querySelector('dialog');
-         var showDialogButton = document.querySelector('#show-dialog');
-         if (! dialog.showModal) {
-           dialogPolyfill.registerDialog(dialog);
-         }
-         dialog.showModal();
-         dialog.querySelector('.close').addEventListener('click', function() {
-           dialog.close();
-         });
-         var key = $(this).parent().siblings().find(".card-title").html();
-          $('#btn_review').click(function() {
-         var content = $("#textarea").val();
-         var myReview = {};
-         myReview[key] = content;
-         var saveReview = JSON.stringify(myReview);
-         localStorage.setItem(key, saveReview);
-         $("#textarea").val("");
-       });
-        }
-        else{
-          $(this).parent().siblings().css('opacity', '1');
-          $(this).parent().parent().find(".complete-img").remove();
-        }
-    });
-
-//random list selector
-  var p_list = ["action.html", "crime.html", "fantasy_sf.html", "horror.html", "romance.html"];
-  var random_list=[];
-  for (p=0; p<5; p++) {
-  $.get(p_list[p], function(data) {
-    var test = $(data);
-    var m_title = test.find('.card-title');
-    for (var i in m_title) {
-      if(typeof(m_title[i].innerHTML) == "string") {
-        random_list.push(m_title[i].innerHTML);
-        
-      }
-    }
-  })
-  };
-  $("#random_movie").click(function() {
-    var n = Math.floor(Math.random()*random_list.length);
-  $("#random_title").text(random_list[n]);
-  });
-</script>
 
 
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="movie.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
