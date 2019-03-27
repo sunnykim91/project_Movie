@@ -41,3 +41,22 @@
     .input_review{
       text-align: center;
     }
+    .reviewcss{
+        border: 1px solid pink;
+        margin: 1em;
+        padding: 1em;
+        line-height: 2em;
+    }
+    .title_review {
+        display:inline-block;
+        font-size:2em;
+        padding: 0.5em;
+    }
+    .content_review {
+        display:inline-block;
+        font-size:1.5em;
+        padding-left: 2em;
+        margin-top:0.5em;
+
+
+    }
