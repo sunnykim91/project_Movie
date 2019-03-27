@@ -12,15 +12,24 @@
     #btn_random {
       align-self: center;
       width:13em;
+      margin: 15px 0;
     }
     .card-deck {
         margin-top: 2%;
     }
+    .card-title{
+      font-family: 'YiSunShinDotumM';
+      font-size: 2em;
+    }
+    .card-text{
+      color:rgb(255, 169, 169);
+    }
     .card {
       width: 295px;
+      background-color:black;
     }
     .card-body {
-      height: 184px;
+      height: 235px;
 
     }
     .checkBox{
@@ -38,25 +47,32 @@
       width: 500px;
       height: 300px;
     }
+    .modal-body{
+      text-align:center;
+    }
     .input_review{
       text-align: center;
     }
     .reviewcss{
-        border: 1px solid pink;
         margin: 1em;
         padding: 1em;
         line-height: 2em;
+        background-color:rgba(255,255,255,0.1);
     }
     .title_review {
         display:inline-block;
-        font-size:2em;
+        font-size:2.5em;
         padding: 0.5em;
+        font-family: 'Do Hyeon', sans-serif;
+        color:#8ccacc;
+        text-shadow: 0px 0px 5px black;
     }
     .content_review {
         display:inline-block;
-        font-size:1.5em;
+        font-size:2em;
         padding-left: 2em;
         margin-top:0.5em;
+<<<<<<< HEAD
     }
     .modal-body {
         text-align: center;
@@ -71,3 +87,27 @@
         font-size: 2em;
     }
     
+=======
+
+        font-family: 'Poor Story', cursive;
+    }
+    .mdl-layout__content{
+      background: #2f2f2f;
+      color:white;
+      padding:30px 30px;
+    }
+    #page_title{
+      font-size: 50px;
+      font-family: 'Do Hyeon', sans-serif;
+      text-shadow: 0px 0px 12px #6ef5f9;
+      margin-bottom: 40px;
+    }
+  .mdl-layout__drawer>.mdl-layout__title, .mdl-layout__drawer>.mdl-layout-title {
+      padding-left: 20px;
+  }
+  #random_title{
+    color:deeppink;
+  }
+  @font-face { font-family: 'YiSunShinDotumM'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YiSunShinDotumM.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+>>>>>>> 116efabf3227e49749e24d01d5dd69c95f2d63f0
