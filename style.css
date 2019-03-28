@@ -93,6 +93,10 @@
         line-height: 2em;
         background-color:rgba(255,255,255,0.1);
     }
+    .close_btn{
+      padding: 0px;
+      border-width: 0px;
+    }
     .fa-times-circle:before {
         content: "\f057";
         position: absolute;
