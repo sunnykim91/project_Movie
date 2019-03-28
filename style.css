@@ -1,3 +1,21 @@
+    #home {
+        text-align: center;
+    }
+    #profile {
+        text-align: center;
+    }
+    .info_bodytext {
+        margin:1em;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size:1.5em;
+    }
+    .how_to_use {
+        height:400px;
+    }
+    .btn_random_img {
+        height:200px;
+        margin:1em;
+    }
     .container {
         margin-top: 2%;
         
@@ -16,7 +34,7 @@
       top:0px;
       background-color:#2f2f2f;
     }
-    img {
+    .card-img-top {
         height: 420px;
         position: relative;
     }
@@ -80,14 +98,29 @@
         padding: 0.5em;
         font-family: 'Do Hyeon', sans-serif;
         color:#8ccacc;
-        text-shadow: 0px 0px 5px black;
+        
+        background: -webkit-linear-gradient(rgb(224, 45, 45),pink);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     .content_review {
         display:inline-block;
         font-size:2em;
         padding-left: 2em;
-        margin-top:0.5em;
-
+        margin:0.5em 0;
+    }
+    .modal-body {
+        text-align: center;
+    }
+    #random_title {
+        color:rgb(103, 61, 116);
+    }
+    .text1 {
+        font-size:2em;
+    }
+    .text2 {
+        font-size: 2em;
+        margin:0.5em 0;
         font-family: 'Poor Story', cursive;
     }
     .mdl-layout__content{
@@ -107,5 +140,20 @@
   #random_title{
     color:deeppink;
   }
-  @font-face { font-family: 'YiSunShinDotumM'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YiSunShinDotumM.woff') format('woff'); font-weight: normal; font-style: normal; }
 
+
+  .trailer{
+    color: rgb(214, 214, 214);
+    border: 1px solid #656565;
+    padding: 5px;
+  }
+  .trailer:hover, .trailer:visited{
+    text-decoration: none;
+    color:rgb(214, 214, 214);
+  }
+  .btn-light {
+    color: #ffffff;
+    background-color: #2b2b2b;
+    border:none;
+  }
+  @font-face { font-family: 'YiSunShinDotumM'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YiSunShinDotumM.woff') format('woff'); font-weight: normal; font-style: normal; }

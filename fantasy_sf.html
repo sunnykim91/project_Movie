@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
@@ -40,7 +41,7 @@
                 <div class="card">
                   <img src="fantasy_sf/ai.jpg" class="card-img-top" alt="A.I.">
                   <div class="checkBox">
-                      <input type="checkbox" value="chkMymovie">
+                      <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                     </div>
                   <div class="card-body">
                     <h5 class="card-title">A.I.</h5>
@@ -51,7 +52,7 @@
                 <div class="card">
                   <img src="fantasy_sf/avatar.jpg" class="card-img-top" alt="Avatar">
                   <div class="checkBox">
-                      <input type="checkbox" value="chkMymovie">
+                      <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                     </div>
                   <div class="card-body">
                     <h5 class="card-title">아바타</h5>
@@ -62,7 +63,7 @@
                 <div class="card">
                   <img src="fantasy_sf/gravity.jpg" class="card-img-top" alt="Gravity">
                   <div class="checkBox">
-                      <input type="checkbox" value="chkMymovie">
+                      <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                     </div>
                   <div class="card-body">
                     <h5 class="card-title">그래비티</h5>
@@ -75,7 +76,7 @@
                   <div class="card">
                     <img src="fantasy_sf/inception.jpg" class="card-img-top" alt="Inception">
                     <div class="checkBox">
-                        <input type="checkbox" value="chkMymovie">
+                        <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                       </div>
                     <div class="card-body">
                       <h5 class="card-title">인셉션</h5>
@@ -86,7 +87,7 @@
                   <div class="card">
                     <img src="fantasy_sf/lotr.png" class="card-img-top" alt="The Lord of the Ring">
                     <div class="checkBox">
-                        <input type="checkbox" value="chkMymovie">
+                        <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                       </div>
                     <div class="card-body">
                       <h5 class="card-title">반지의 제왕</h5>
@@ -97,7 +98,7 @@
                   <div class="card">
                     <img src="fantasy_sf/matrix.jpg" class="card-img-top" alt="Matrix">
                     <div class="checkBox">
-                        <input type="checkbox" value="chkMymovie">
+                        <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                       </div>
                     <div class="card-body">
                       <h5 class="card-title">매트릭스</h5>
@@ -110,7 +111,7 @@
                     <div class="card">
                       <img src="fantasy_sf/mfe.png" class="card-img-top" alt="Man from Earth">
                       <div class="checkBox">
-                          <input type="checkbox" value="chkMymovie">
+                          <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                         </div>
                       <div class="card-body">
                         <h5 class="card-title">맨프롬어스</h5>
@@ -121,7 +122,7 @@
                     <div class="card">
                       <img src="fantasy_sf/sen.jpg" class="card-img-top" alt="Spirited Away">
                       <div class="checkBox">
-                          <input type="checkbox" value="chkMymovie">
+                          <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                         </div>
                       <div class="card-body">
                         <h5 class="card-title">센과 치히로의 행방불명</h5>
@@ -132,7 +133,7 @@
                     <div class="card">
                         <img src="fantasy_sf/vampire.jpg" class="card-img-top" alt="Intervew with the Vampire">
                         <div class="checkBox">
-                            <input type="checkbox" value="chkMymovie">
+                            <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                           </div>
                         <div class="card-body">
                           <h5 class="card-title">뱀파이어와의 인터뷰</h5>
@@ -174,9 +175,9 @@
             </button>
           </div>
           <div class="modal-body">
-            <p>오늘은</p>
+            <p class="text1">오늘은</p>
             <h3 id="random_title"></h3>
-            <p>어때?</p>
+            <p class="text2">어때?</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -185,6 +186,12 @@
         </div>
       </div>
     </div>
+  </div>
+
+<!--Toast-->
+<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
   </div>
     
 <script src="movie.js"></script>

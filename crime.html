@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -39,7 +40,7 @@
                 <div class="card">
                   <img src="image/lambs.jpg" class="card-img-top" alt="the silence of the lambs">
                   <div class="checkBox">
-                        <input type="checkbox" value="chkMymovie">
+                        <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                       </div>
                   <div class="card-body">
                     <h5 class="card-title">양들의 침묵</h5>
@@ -50,7 +51,7 @@
                 <div class="card">
                   <img src="image/murder.jpg" class="card-img-top" alt="살인의 추억">
                   <div class="checkBox">
-                        <input type="checkbox" value="chkMymovie">
+                        <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                       </div>
                   <div class="card-body">
                     <h5 class="card-title">살인의 추억</h5>
@@ -61,7 +62,7 @@
                 <div class="card">
                   <img src="image/dogville.jpg" class="card-img-top" alt="dogville">
                   <div class="checkBox">
-                        <input type="checkbox" value="chkMymovie">
+                        <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                       </div>
                   <div class="card-body">
                     <h5 class="card-title">도그빌</h5>
@@ -74,7 +75,7 @@
                   <div class="card">
                     <img src="image/phonebooth.jpg" class="card-img-top" alt="phone booth">
                     <div class="checkBox">
-                            <input type="checkbox" value="chkMymovie">
+                            <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                           </div>
                     <div class="card-body">
                       <h5 class="card-title">폰부스</h5>
@@ -85,7 +86,7 @@
                   <div class="card">
                     <img src="image/memento.jpg" class="card-img-top" alt="memento">
                     <div class="checkBox">
-                            <input type="checkbox" value="chkMymovie">
+                            <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                           </div>
                     <div class="card-body">
                       <h5 class="card-title">메멘토</h5>
@@ -96,7 +97,7 @@
                   <div class="card">
                     <img src="image/old_boy.jpg" class="card-img-top" alt="oldboy">
                     <div class="checkBox">
-                            <input type="checkbox" value="chkMymovie">
+                            <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                           </div>
                     <div class="card-body">
                       <h5 class="card-title">올드보이</h5>
@@ -109,7 +110,7 @@
                     <div class="card">
                       <img src="image/usual_suspect.jpg" class="card-img-top" alt="usual suspect">
                       <div class="checkBox">
-                            <input type="checkbox" value="chkMymovie">
+                            <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                           </div>
                       <div class="card-body">
                         <h5 class="card-title">유주얼 서스펙트</h5>
@@ -120,7 +121,7 @@
                     <div class="card">
                       <img src="image/catch_me.jpg" class="card-img-top" alt="catch me if you can">
                       <div class="checkBox">
-                            <input type="checkbox" value="chkMymovie">
+                            <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                           </div>
                       <div class="card-body">
                         <h5 class="card-title">캐치미 이프유캔</h5>
@@ -131,7 +132,7 @@
                     <div class="card">
                       <img src="image/gangs.jpg" class="card-img-top" alt="gangs of newyork">
                       <div class="checkBox">
-                            <input type="checkbox" value="chkMymovie">
+                            <button type="button" class="btn btn-light"><i class="fas fa-edit"></i></button>
                           </div>
                       <div class="card-body">
                         <h5 class="card-title">갱스 오브 뉴욕</h5>
@@ -171,9 +172,9 @@
               </button>
             </div>
             <div class="modal-body">
-              <p>오늘은</p>
+              <p class="text1">오늘은</p>
               <h3 id="random_title"></h3>
-              <p>어때?</p>
+              <p class="text2">어때?</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -184,7 +185,11 @@
       </div>
     </div>
         
-
+<!--Toast-->
+<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+    </div>
 <script src="movie.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

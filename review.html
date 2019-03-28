@@ -16,6 +16,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .mdl-layout__content{
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,9b9b9b+100 */
+             background: rgb(0,0,0); /* Old browsers */
+             background: -moz-linear-gradient(top, rgb(27, 27, 27) 0%, rgba(155,155,155,1) 100%); /* FF3.6-15 */
+             background: -webkit-linear-gradient(top, rgba(27, 27, 27,1) 0%,rgba(155,155,155,1) 100%); /* Chrome10-25,Safari5.1-6 */
+             background: linear-gradient(to bottom, rgba(27, 27, 27,1) 0%,rgba(155,155,155,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#9b9b9b',GradientType=1 ); /* IE6-9 */
+        }
+       
+     </style>
+
 </head>
 
 
@@ -83,7 +95,7 @@
 <script type="text/javascript">
 for (var key of Object.keys(localStorage)){
 var loadReview = JSON.parse(localStorage.getItem(key));
-if(key !== "my_name"){
+if(loadReview["review"] === "ok"){
  var x = '<div class="reviewcss">'
       + '<span class="title_review"><em>'+ Object.keys(loadReview)[0]+'</em></span><br>'
       
