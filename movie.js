@@ -3,12 +3,13 @@ function load(){
     var check_m = JSON.parse(localStorage.getItem(i));
       for(var m of $(".card-title")){
         if(Object.keys(check_m)[0] == m.innerHTML){
-        $(m).parent().css('opacity', '0.2'); 
-        // card-title 태그의 부모의 card-body 에 투명도
-        $(m).parent().siblings("img").css('opacity', '0.5'); 
-        // card-title 의 부모의 형제들 중 img 태그에 투명도
-        $(m).parent().parent().prepend('<img src="completed2.png" class="complete-img">');
-        // 포스터 사진 위에 comeplete 이미지 추가
+          $(m).parent().css('opacity', '0.2'); 
+          // card-title 태그의 부모의 card-body 에 투명도
+          $(m).parent().siblings("img").css('opacity', '0.5'); 
+          // card-title 의 부모의 형제들 중 img 태그에 투명도
+          $(m).parent().parent().prepend('<img src="completed2.png" class="complete-img">');
+          // 포스터 사진 위에 comeplete 이미지 추가
+          $(m).parent().siblings('.checkBox').hide();
         }
       }
     }
@@ -45,16 +46,18 @@ load();
 
     
          
-          $('#btn_review').click(function() {
-            key = $(checkbox).parent().siblings().find(".card-title").html();
-            var content = $("#textarea").val();
-         var myReview = {};
-         myReview[key] = content;
-         myReview['review'] = "ok";
-         var saveReview = JSON.stringify(myReview);
-         localStorage.setItem(key, saveReview);
-         dialog.close();
-       });
+$('#btn_review').click(function() {
+  key = $(checkbox).parent().siblings().find(".card-title").html();
+  var content = $("#textarea").val();
+  var myReview = {};
+  myReview[key] = content;
+  myReview['review'] = "ok";
+  var saveReview = JSON.stringify(myReview);
+  localStorage.setItem(key, saveReview);
+  //console.log($(checkbox).parent().html());
+  $(checkbox).parent().hide();
+  dialog.close();
+});
 //random list selector
   var p_list = ["action.html", "crime.html", "fantasy_sf.html", "horror.html", "romance.html"];
   var random_list=[];
