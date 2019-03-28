@@ -41,7 +41,7 @@ load();
         var content = $("#textarea").val();
          var myReview = {};
          myReview[key] = content;
-         //myReview['complete'] = true;
+         myReview['review'] = "ok";
          var saveReview = JSON.stringify(myReview);
          localStorage.setItem(key, saveReview);
          dialog.close();

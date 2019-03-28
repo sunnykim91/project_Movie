@@ -74,7 +74,7 @@
         display:inline-block;
         font-size:2em;
         padding-left: 2em;
-        margin-top:0.5em;
+        margin:0.5em 0;
     }
     .modal-body {
         text-align: center;
@@ -87,6 +87,7 @@
     }
     .text2 {
         font-size: 2em;
+        margin:0.5em 0;
         font-family: 'Poor Story', cursive;
     }
     .mdl-layout__content{
@@ -105,5 +106,16 @@
   }
   #random_title{
     color:deeppink;
+  }
+
+
+  .trailer{
+    color: rgb(214, 214, 214);
+    border: 1px solid #656565;
+    padding: 5px;
+  }
+  .trailer:hover, .trailer:visited{
+    text-decoration: none;
+    color:rgb(214, 214, 214);
   }
   @font-face { font-family: 'YiSunShinDotumM'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YiSunShinDotumM.woff') format('woff'); font-weight: normal; font-style: normal; }
