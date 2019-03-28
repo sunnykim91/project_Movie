@@ -17,13 +17,11 @@ load();
 
 //check box format
   var checkbox;
-  $('input:checkbox').click(function() {
+  $('.btn.btn-light').click(function() {
       checkbox = $(this);
   })
-  $('input:checkbox').change(
-    function(){
-        if ($(this).is(':checked')) {
-         
+  $('.btn.btn-light').click(
+    function(){ 
           $(this).parent().siblings().css('opacity', '0.5');
           $(this).parent().parent().prepend('<img src="completed2.png" class="complete-img">');
           var dialog = document.querySelector('dialog');
@@ -52,11 +50,7 @@ load();
             $(checkbox).parent().parent().find(".complete-img").remove();
             checkbox.prop('checked', false);
          });
-        }
-        else{
-          $(this).parent().siblings().css('opacity', '1');
-          $(this).parent().parent().find(".complete-img").remove();
-        }
+        
     });
 
 //random list selector
