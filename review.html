@@ -93,10 +93,13 @@
   </div>
 
 <script type="text/javascript">
+
+
 for (var key of Object.keys(localStorage)){
 var loadReview = JSON.parse(localStorage.getItem(key));
 if(loadReview["review"] === "ok"){
  var x = '<div class="reviewcss">'
+      + '<i name="close_btn" class="far fa-times-circle"></i>'
       + '<span class="title_review"><em>'+ Object.keys(loadReview)[0]+'</em></span><br>'
       
       + '<span class="content_review"><i class="fas fa-angle-double-right"></i>&nbsp;'+loadReview[key] +'</span><br>' 
@@ -106,6 +109,12 @@ $("#show_review").append(x);
 // console.log(Object.keys(loadReview)[0]);
 //console.log(loadReview[key]);
 }
+
+$('#close_btn').click(function() {
+   var a = $(this).html();
+   console.log(a);
+});
+
 
 </script>
 <script src="movie.js"></script>

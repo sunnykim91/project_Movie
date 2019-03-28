@@ -87,10 +87,19 @@
       text-align: center;
     }
     .reviewcss{
+        position: relative;
         margin: 1em;
         padding: 1em;
         line-height: 2em;
         background-color:rgba(255,255,255,0.1);
+    }
+    .fa-times-circle:before {
+        content: "\f057";
+        position: absolute;
+        color: red;
+        right: 0.5em;
+        top: 0.5em;
+        font-size: 1.7em
     }
     .title_review {
         display:inline-block;
