@@ -1,3 +1,5 @@
+document.write("<script defer src='https://code.getmdl.io/1.3.0/material.min.js'></script>");
+
 function load(){
   for(var i of Object.keys(localStorage)){
     var check_m = JSON.parse(localStorage.getItem(i));
@@ -18,6 +20,7 @@ load();
 
 //check box format
   var checkbox;
+  var dialog = document.querySelector('dialog');
   $('input:checkbox').click(function() {
       checkbox = $(this);
   })
@@ -32,7 +35,7 @@ load();
           $(this).parent().siblings().css('opacity', '0.5');
           $(this).parent().parent().prepend('<img src="completed2.png" class="complete-img">');
 
-          var dialog = document.querySelector('dialog');
+         
           var showDialogButton = document.querySelector('#show-dialog');
           if (! dialog.showModal) {
             dialogPolyfill.registerDialog(dialog);
@@ -42,18 +45,8 @@ load();
             dialog.close();
           });
 
-          key = $(this).parent().siblings().find(".card-title").html();
           
-          $('#btn_review').click(function() {
 
-        var content = $("#textarea").val();
-         var myReview = {};
-         myReview[key] = content;
-         //myReview['complete'] = true;
-         var saveReview = JSON.stringify(myReview);
-         localStorage.setItem(key, saveReview);
-         dialog.close();
-       });
          $("#textarea").val("");
          $(".mdl-button.close").click(function(){
             $(checkbox).parent().parent().find(".card-img-top, .card-body").css('opacity', '1');
@@ -63,13 +56,41 @@ load();
 
         }
 
-
         else{
           $(this).parent().siblings().css('opacity', '1');
           $(this).parent().parent().find(".complete-img").remove();
         }
     });
 
+
+    var snackbarContainer = document.querySelector('#demo-toast-example');
+    var showToastButton = document.querySelector('#btn_review');
+
+    showToastButton.addEventListener('click',function(){
+
+      var data = {message: 'Example Message # '};
+      snackbarContainer.MaterialSnackbar.showSnackbar(data);
+      alert('asdf');
+
+      key = $(checkbox).parent().siblings().find(".card-title").html();
+      var content = $("#textarea").val();
+      var myReview = {};
+      myReview[key] = content;
+      //myReview['complete'] = true;
+      var saveReview = JSON.stringify(myReview);
+      localStorage.setItem(key, saveReview);
+      dialog.close();
+
+      
+    });
+
+          
+
+
+     
+       
+      
+  
 //random list selector
   var p_list = ["action.html", "crime.html", "fantasy_sf.html", "horror.html", "romance.html"];
   var random_list=[];

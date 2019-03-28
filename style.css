@@ -1,5 +1,20 @@
     .container {
         margin-top: 2%;
+        
+
+    }
+  #page_title{
+    padding-left: 5.5em;
+    padding-top: 0.8em;
+    color: white;
+  }
+
+    
+
+   .header-sticky{
+      position: sticky;
+      top:0px;
+      background-color:#2f2f2f;
     }
     img {
         height: 420px;
