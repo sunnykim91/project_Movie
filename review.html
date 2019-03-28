@@ -43,7 +43,6 @@
         <a class="mdl-navigation__link" href="action.html">액션</a>
         <a class="mdl-navigation__link" href="crime.html">범죄/스릴러</a>
         <a class="mdl-navigation__link" href="horror.html">공포</a>
-
         <a class="mdl-navigation__link" href="romance.html">로맨스/드라마</a>
         <a class="mdl-navigation__link" href="fantasy_sf.html">판타지/SF</a>
         <a class="mdl-navigation__link" href="review.html">나의 리뷰</a>
@@ -54,7 +53,6 @@
         <div class="page-content">
           <!-- Your content goes here -->
           <div class="container">
-
               <p id="page_title">나의 리뷰</p>
           <hr>
           <div id="show_review">
@@ -99,13 +97,8 @@ for (var key of Object.keys(localStorage)){
 var loadReview = JSON.parse(localStorage.getItem(key));
 if(loadReview["review"] === "ok"){
  var x = '<div class="reviewcss">'
-<<<<<<< HEAD
-      + '<span class="title_review"><em>'+ Object.keys(loadReview)[0]+'</em></span><i class="fas fa-pencil-alt"></i><br>'
-=======
       + '<i name="close_btn" class="far fa-times-circle"></i>'
-      + '<span class="title_review"><em>'+ Object.keys(loadReview)[0]+'</em></span><br>'
-      
->>>>>>> d4268c10af27242728ddb46fa046581c3f609c4a
+      + '<span class="title_review"><em>'+ Object.keys(loadReview)[0]+'</em></span><br>'     
       + '<span class="content_review"><i class="fas fa-angle-double-right"></i>&nbsp;'+loadReview[key] +'</span><br>' 
       + '</div>';
 $("#show_review").append(x);
