@@ -8,6 +8,7 @@ function load(){
         $(m).parent().siblings("img").css('opacity', '0.5'); 
         // card-title 의 부모의 형제들 중 img 태그에 투명도
         $(m).parent().parent().prepend('<img src="completed2.png" class="complete-img">');
+        $(m).parent().siblings('.checkBox').hide();
         // 포스터 사진 위에 comeplete 이미지 추가
         }
       }
@@ -53,6 +54,7 @@ load();
          myReview['review'] = "ok";
          var saveReview = JSON.stringify(myReview);
          localStorage.setItem(key, saveReview);
+         $(checkbox).parent().hide();
          dialog.close();
        });
 //random list selector
@@ -83,7 +85,7 @@ load();
   var showToastButton = document.querySelector('#btn_review');
   showToastButton.addEventListener('click', function() {
     'use strict';
-    var data = {message: '리뷰를 남기셨습니다. 나의 리뷰를 확인해주세요'};
+    var data = {message: '리뷰를 남기셨습니다. 나의 리뷰를 확인해주세요.'};
     snackbarContainer.MaterialSnackbar.showSnackbar(data);
   });
 }());

@@ -89,8 +89,7 @@ for (var key of Object.keys(localStorage)){
 var loadReview = JSON.parse(localStorage.getItem(key));
 if(loadReview["review"] === "ok"){
  var x = '<div class="reviewcss">'
-      + '<span class="title_review"><em>'+ Object.keys(loadReview)[0]+'</em></span><br>'
-      
+      + '<span class="title_review"><em>'+ Object.keys(loadReview)[0]+'</em></span><i class="fas fa-pencil-alt"></i><br>'
       + '<span class="content_review"><i class="fas fa-angle-double-right"></i>&nbsp;'+loadReview[key] +'</span><br>' 
       + '</div>';
 $("#show_review").append(x);
