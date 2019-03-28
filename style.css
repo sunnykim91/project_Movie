@@ -1,7 +1,25 @@
+    #home {
+        text-align: center;
+    }
+    #profile {
+        text-align: center;
+    }
+    .info_bodytext {
+        margin:1em;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size:1.5em;
+    }
+    .how_to_use {
+        height:400px;
+    }
+    .btn_random_img {
+        height:200px;
+        margin:1em;
+    }
     .container {
         margin-top: 2%;
     }
-    img {
+    .card-img-top {
         height: 420px;
         position: relative;
     }
