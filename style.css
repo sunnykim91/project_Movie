@@ -93,6 +93,10 @@
         line-height: 2em;
         background-color:rgba(255,255,255,0.1);
     }
+    .close_btn{
+      padding: 0px;
+      border-width: 0px;
+    }
     .fa-times-circle:before {
         content: "\f057";
         position: absolute;
@@ -107,8 +111,7 @@
         padding: 0.5em;
         font-family: 'Do Hyeon', sans-serif;
         color:#8ccacc;
-        
-        background: -webkit-linear-gradient(rgb(224, 45, 45),pink);
+        background: -webkit-linear-gradient(rgb(255, 190, 190),rgb(194, 194, 194));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -117,6 +120,7 @@
         font-size:2em;
         padding-left: 2em;
         margin:0.5em 0;
+        font-family: 'Poor Story', cursive;
     }
     .modal-body {
         text-align: center;
@@ -124,14 +128,10 @@
     #random_title {
         color:rgb(103, 61, 116);
     }
-    .text1 {
-        font-size:2em;
+    .text1, .text2 {
+        font-size:1.5em;
     }
-    .text2 {
-        font-size: 2em;
-        margin:0.5em 0;
-        font-family: 'Poor Story', cursive;
-    }
+    
     .mdl-layout__content{
       background: #2f2f2f;
       color:white;

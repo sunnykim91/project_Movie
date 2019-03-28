@@ -97,8 +97,13 @@ for (var key of Object.keys(localStorage)){
 var loadReview = JSON.parse(localStorage.getItem(key));
 if(loadReview["review"] === "ok"){
  var x = '<div class="reviewcss">'
+<<<<<<< HEAD
       + '<i name="close_btn" class="far fa-times-circle"></i>'
       + '<span class="title_review"><em>'+ Object.keys(loadReview)[0]+'</em></span><br>'     
+=======
+      + '<button class="close_btn"><i class="far fa-times-circle"></i></button>'
+      + '<span class="title_review"><em>'+ Object.keys(loadReview)[0]+'</em></span><br>'
+>>>>>>> b657b6c1c5f319d400c99df0657cddfd369c616c
       + '<span class="content_review"><i class="fas fa-angle-double-right"></i>&nbsp;'+loadReview[key] +'</span><br>' 
       + '</div>';
 $("#show_review").append(x);
@@ -107,9 +112,9 @@ $("#show_review").append(x);
 //console.log(loadReview[key]);
 }
 
-$('#close_btn').click(function() {
-   var a = $(this).html();
-   console.log(a);
+$('.close_btn').click(function() {
+  $(this).parent().remove();
+  localStorage.removeItem($(this).siblings('.title_review').text());
 });
 
 
