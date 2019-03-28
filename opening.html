@@ -22,12 +22,24 @@
             }
 
             h3{
-                margin-top: 1em;
+                margin-top: 2em;
                 display:inline-block;
                 text-align:center;
             }
             #nameForm{
                 margin-top: 50px;
+            }
+            .btn-outline-secondary:hover{
+                background-color: #ffffff;
+                border-color: #ffffff;
+                color: #8ccacc;
+            }
+            .btn-outline-secondary {
+                color: #ffffff;
+                border-color: #ffffff;
+            }
+            #div1, #div2{
+                display:none;
             }
         </style>
     </head>
@@ -36,39 +48,51 @@
             <img src="오까 white.png" width=300px>
             <h3 id="n"></h3>
         <form action="#" id="nameForm">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="What is your name?" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group mb-3" id="div1">
+                <input type="text" id="sample1" class="form-control" placeholder="What is your name?" aria-label="Recipient's username" aria-describedby="button-addon2" autocomplete="off">
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="submit" id="button-addon2">SUBMIT</button>
+                  <button class="btn btn-outline-secondary submit1" type="button" id="button-addon2">SUBMIT</button>
                 </div>
               </div>
+            <div class="input-group mb-3" id="div2">
+                <input type="text" id="sample2" class="form-control" placeholder="What is your name?" aria-label="Recipient's username" aria-describedby="button-addon2" autocomplete="off">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary submit2" type="button" id="button-addon2">SUBMIT</button>
+                </div>
+            </div>
         </form>
     </div>
 
     <script>
         $(function(){
-
-        function name(){
-        var get_name = JSON.parse(localStorage.getItem("my_name"));
-        if(get_name !== null){
-            $('#n').text('Welcome back, '+get_name);
-            $('#nameForm').hide();
-            // window.open("action.html","_blank");
-            }
-        }
-
-        name();
-
-        $("#nameForm").submit(function(e){
-        e.preventDefault;
-        var myName = document.getElementById("sample3").value;
-        localStorage.setItem("my_name",JSON.stringify(myName));
-        $('#nameForm').remove();
-        alert("Nice to meet you, "+JSON.parse(localStorage.getItem('my_name')));
-        // window.open("action.html","_blank");
-        });
-
         
+        if(localStorage.getItem("my_name") == null){
+            $("#div1").css({"display":"inline-flex"});
+            $(".btn.btn-outline-secondary.submit1").click(function(e){
+            e.preventDefault;
+            var myName = document.getElementById("sample1").value;
+            localStorage.setItem("my_name",JSON.stringify(myName));
+            $('#nameForm').remove();
+            alert("환영합니다!");
+            $('#n').text('Nice to meet you, '+myName+'.');
+            window.open("info.html", "_blank");
+            });
+
+        }else if(localStorage.getItem("my_name") !== null){
+            $("#div2").css({"display":"inline-flex"});
+            $(".btn.btn-outline-secondary.submit2").click(function(e){
+            e.preventDefault;
+            var get_name = JSON.parse(localStorage.getItem("my_name"));
+            var myName = document.getElementById("sample2").value;
+            if(get_name == myName){
+                alert("환영합니다!");
+                window.open("info.html", "_blank");
+            }else if(get_name !== myName){
+                alert("이름을 잘못 입력하셨습니다.\n"+
+                        "이름은 대문자와 소문자를 구분합니다.");
+            }
+        })
+        }
     });
        
     </script>
