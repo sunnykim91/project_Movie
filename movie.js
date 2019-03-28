@@ -77,6 +77,7 @@ $('#btn_review').click(function() {
   $("#random_title").text(random_list[n]);
   });
 
+//toast
 
 (function() {
   'use strict';
