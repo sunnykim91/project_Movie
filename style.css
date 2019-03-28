@@ -65,14 +65,16 @@
         padding: 0.5em;
         font-family: 'Do Hyeon', sans-serif;
         color:#8ccacc;
-        text-shadow: 0px 0px 5px black;
+        
+        background: -webkit-linear-gradient(rgb(255, 198, 198),pink);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     .content_review {
         display:inline-block;
         font-size:2em;
         padding-left: 2em;
         margin-top:0.5em;
-<<<<<<< HEAD
     }
     .modal-body {
         text-align: center;
@@ -85,10 +87,6 @@
     }
     .text2 {
         font-size: 2em;
-    }
-    
-=======
-
         font-family: 'Poor Story', cursive;
     }
     .mdl-layout__content{
@@ -109,5 +107,3 @@
     color:deeppink;
   }
   @font-face { font-family: 'YiSunShinDotumM'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YiSunShinDotumM.woff') format('woff'); font-weight: normal; font-style: normal; }
-
->>>>>>> 116efabf3227e49749e24d01d5dd69c95f2d63f0
