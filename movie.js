@@ -44,8 +44,6 @@ load();
         
     });
 
-    
-         
 $('#btn_review').click(function() {
   key = $(checkbox).parent().siblings().find(".card-title").html();
   var content = $("#textarea").val();
@@ -58,6 +56,7 @@ $('#btn_review').click(function() {
   $(checkbox).parent().hide();
   dialog.close();
 });
+
 //random list selector
   var p_list = ["action.html", "crime.html", "fantasy_sf.html", "horror.html", "romance.html"];
   var random_list=[];
@@ -78,6 +77,7 @@ $('#btn_review').click(function() {
   $("#random_title").text(random_list[n]);
   });
 
+//toast
 
 (function() {
   'use strict';
@@ -86,7 +86,7 @@ $('#btn_review').click(function() {
   var showToastButton = document.querySelector('#btn_review');
   showToastButton.addEventListener('click', function() {
     'use strict';
-    var data = {message: '리뷰를 남기셨습니다. 나의 리뷰를 확인해주세요'};
+    var data = {message: '리뷰를 남기셨습니다. 나의 리뷰를 확인해주세요.'};
     snackbarContainer.MaterialSnackbar.showSnackbar(data);
   });
 }());
