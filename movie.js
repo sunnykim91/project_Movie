@@ -1,52 +1,67 @@
 function load(){
   for(var i of Object.keys(localStorage)){
     var check_m = JSON.parse(localStorage.getItem(i));
-    if(Object.keys(check_m)[1] == "complete"){
-      console.log(Object.keys(check_m)[0]);
-    }
-    }
+      // console.log(Object.keys(check_m)[0]);
+      for(var m of document.getElementsByClassName("card-title")){
+        if(Object.keys(check_m)[0] == m.innerHTML){
+          console.log(m.innerHTML);
+        }
+      }
     }
 
-load();
+
+
+  }
+ load();
+
+
 
 //check box format
   var checkbox;
   $('input:checkbox').click(function() {
       checkbox = $(this)
   })
+
   $('input:checkbox').change(
-    function(){
+    function check(){
+        
+      
         if ($(this).is(':checked')) {
          
           $(this).parent().siblings().css('opacity', '0.1');
           $(this).parent().parent().prepend('<img src="completed.png" class="complete-img">');
+
           var dialog = document.querySelector('dialog');
-         var showDialogButton = document.querySelector('#show-dialog');
-         if (! dialog.showModal) {
-           dialogPolyfill.registerDialog(dialog);
-         }
-         dialog.showModal();
-         dialog.querySelector('.close').addEventListener('click', function() {
-           dialog.close();
-         });
-         key = $(this).parent().siblings().find(".card-title").html();
-         
+          var showDialogButton = document.querySelector('#show-dialog');
+          if (! dialog.showModal) {
+            dialogPolyfill.registerDialog(dialog);
+          }
+          dialog.showModal();
+          dialog.querySelector('.close').addEventListener('click', function() {
+            dialog.close();
+          });
+
+          key = $(this).parent().siblings().find(".card-title").html();
+          
           $('#btn_review').click(function() {
-        var content = $("#textarea").val();
-         var myReview = {};
-         myReview[key] = content;
-         myReview['complete'] = true;
-         var saveReview = JSON.stringify(myReview);
-         localStorage.setItem(key, saveReview);
-         dialog.close();
-       });
-         $("#textarea").val("");
-         $(".mdl-button.close").click(function(){
-            $(checkbox).parent().parent().find(".card-img-top, .card-body").css('opacity', '1');
-            $(checkbox).parent().parent().find(".complete-img").remove();
-            checkbox.prop('checked', false);
-         });
+            var content = $("#textarea").val();
+            var myReview = {};
+            myReview[key] = content;
+            myReview['complete'] = true ;
+            var saveReview = JSON.stringify(myReview);
+            localStorage.setItem(key, saveReview);
+            dialog.close();
+          });
+
+          $("#textarea").val("");
+          $(".mdl-button.close").click(function(){
+              $(checkbox).parent().parent().find(".card-img-top, .card-body").css('opacity', '1');
+              $(checkbox).parent().parent().find(".complete-img").remove();
+              checkbox.prop('checked', false);
+          });
         }
+
+
         else{
           $(this).parent().siblings().css('opacity', '1');
           $(this).parent().parent().find(".complete-img").remove();
