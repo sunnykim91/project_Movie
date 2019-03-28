@@ -107,7 +107,7 @@
         padding: 0.5em;
         font-family: 'Do Hyeon', sans-serif;
         color:#8ccacc;
-        background: -webkit-linear-gradient(rgb(255, 190, 190),rgb(194, 194, 194));
+        background: -webkit-linear-gradient(#aba7e4,rgb(255, 255, 255));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }

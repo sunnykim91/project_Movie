@@ -25,7 +25,10 @@
              background: linear-gradient(to bottom, rgba(27, 27, 27,1) 0%,rgba(155,155,155,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#9b9b9b',GradientType=1 ); /* IE6-9 */
         }
-       
+        .header-sticky {
+              background-color: rgba(0,0,0,1);
+              height: 7.7em;
+        }
      </style>
 
 </head>
@@ -49,14 +52,15 @@
         <a class="mdl-navigation__link" href="review.html">나의 리뷰</a>
       </nav>
     </div>
-
+    <div class="header-sticky">
+        <p id="page_title">나의 리뷰</p>
+        <hr>
+     </div>
     <main class="mdl-layout__content">
         <div class="page-content">
           <!-- Your content goes here -->
           <div class="container">
 
-              <p id="page_title">나의 리뷰</p>
-          <hr>
           <div id="show_review">
             <!--리뷰 하나씩 div 할당-->
             
