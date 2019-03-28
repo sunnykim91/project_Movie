@@ -9,7 +9,7 @@
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
         <style>
             body{
-                background-color:rgb(228, 228, 228);
+                background-color:#2f2f2f;
             }
             #title_img{
                 margin:50px auto;
@@ -29,7 +29,7 @@
     </head>
     <body>
         <div id="title_img">
-            <img src="오까.png" width=400px>
+            <img src="오까 white.png" width=400px>
             <h3 id="n"></h3>
         <form action="#" id="nameForm">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -44,7 +44,7 @@
         $(function(){
 
         function name(){
-        var get_name = localStorage.getItem("my_name");
+        var get_name = JSON.parse(localStorage.getItem("my_name"));
         if(get_name !== null){
             $('#n').text('Welcome back, '+get_name);
             $('#nameForm').hide();
@@ -57,9 +57,9 @@
         $("#nameForm").submit(function(e){
         e.preventDefault;
         var myName = document.getElementById("sample3").value;
-        localStorage.setItem("my_name",myName);
+        localStorage.setItem("my_name",JSON.stringify(myName));
         $('#nameForm').remove();
-        alert("Nice to meet you, "+localStorage.getItem('my_name'));
+        alert("Nice to meet you, "+JSON.parse(localStorage.getItem('my_name')));
         // window.open("info.html","_self");
         });
 

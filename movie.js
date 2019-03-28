@@ -1,25 +1,25 @@
 function load(){
   for(var i of Object.keys(localStorage)){
     var check_m = JSON.parse(localStorage.getItem(i));
-      // console.log(Object.keys(check_m)[0]);
-      for(var m of document.getElementsByClassName("card-title")){
+
+      for(var m of $(".card-title")){
         if(Object.keys(check_m)[0] == m.innerHTML){
-          console.log(m.innerHTML);
+        $(m).parent().css('opacity', '0.2'); 
+        // card-title 태그의 부모의 card-body 에 투명도
+        $(m).parent().siblings("img").css('opacity', '0.5'); 
+        // card-title 의 부모의 형제들 중 img 태그에 투명도
+        $(m).parent().parent().prepend('<img src="completed2.png" class="complete-img">');
+        // 포스터 사진 위에 comeplete 이미지 추가
         }
       }
     }
-
-
-
   }
- load();
-
-
+load();
 
 //check box format
   var checkbox;
   $('input:checkbox').click(function() {
-      checkbox = $(this)
+      checkbox = $(this);
   })
 
   $('input:checkbox').change(
@@ -28,8 +28,9 @@ function load(){
       
         if ($(this).is(':checked')) {
          
-          $(this).parent().siblings().css('opacity', '0.1');
-          $(this).parent().parent().prepend('<img src="completed.png" class="complete-img">');
+
+          $(this).parent().siblings().css('opacity', '0.5');
+          $(this).parent().parent().prepend('<img src="completed2.png" class="complete-img">');
 
           var dialog = document.querySelector('dialog');
           var showDialogButton = document.querySelector('#show-dialog');
@@ -44,21 +45,22 @@ function load(){
           key = $(this).parent().siblings().find(".card-title").html();
           
           $('#btn_review').click(function() {
-            var content = $("#textarea").val();
-            var myReview = {};
-            myReview[key] = content;
-            myReview['complete'] = true ;
-            var saveReview = JSON.stringify(myReview);
-            localStorage.setItem(key, saveReview);
-            dialog.close();
-          });
 
-          $("#textarea").val("");
-          $(".mdl-button.close").click(function(){
-              $(checkbox).parent().parent().find(".card-img-top, .card-body").css('opacity', '1');
-              $(checkbox).parent().parent().find(".complete-img").remove();
-              checkbox.prop('checked', false);
-          });
+        var content = $("#textarea").val();
+         var myReview = {};
+         myReview[key] = content;
+         //myReview['complete'] = true;
+         var saveReview = JSON.stringify(myReview);
+         localStorage.setItem(key, saveReview);
+         dialog.close();
+       });
+         $("#textarea").val("");
+         $(".mdl-button.close").click(function(){
+            $(checkbox).parent().parent().find(".card-img-top, .card-body").css('opacity', '1');
+            $(checkbox).parent().parent().find(".complete-img").remove();
+            checkbox.prop('checked', false);
+         });
+
         }
 
 
