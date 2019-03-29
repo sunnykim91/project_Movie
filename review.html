@@ -99,6 +99,7 @@ for (var key of Object.keys(localStorage)){
 var loadReview = JSON.parse(localStorage.getItem(key));
 if(loadReview["review"] === "ok"){
  var x = '<div class="reviewcss">'
+      + '<button class="modify_btn"><i class="fas fa-pencil-alt"></i></button>'
       + '<button class="close_btn"><i class="far fa-times-circle"></i></button>'
       + '<span class="title_review"><em>'+ Object.keys(loadReview)[0]+'</em></span><br>'
       
@@ -113,6 +114,37 @@ $("#show_review").append(x);
 $('.close_btn').click(function() {
   $(this).parent().remove();
   localStorage.removeItem($(this).siblings('.title_review').text());
+});
+
+$('.modify_btn').click(function(){
+  
+  $('.modify_btn').hide();
+  var memory_content = $(this).siblings('.content_review').text();
+  var y = '<div class="modify_review_div">'
+        + '<textarea class="modify_text">' + memory_content + '</textarea> '
+        + '<button class="modify_btn_class"><i class="fas fa-pencil-alt"></i></button>'
+        + '</div>';
+  //$(this).siblings('.content_review').val("");
+  $(this).siblings('.content_review').append(y);
+
+  $('.modify_btn_class').click(function(){
+    
+    var booltest = localStorage.getItem($(this).parent().parent().siblings('.title_review').text());
+    if( booltest != null ) {
+      var modiReview = {};
+      modiReview[$(this).parent().parent().siblings('.title_review').text()] = $(this).siblings(".modify_text").val();
+      modiReview['review'] = "ok";
+      var savemodiReview = JSON.stringify(modiReview);
+      localStorage.setItem($(this).parent().parent().siblings('.title_review').text(), savemodiReview);
+
+    }  
+    $('.modify_btn').show();
+    window.location.reload();
+    $(".modify_review_div").remove();
+    
+  });
+ // var txt =prompt("수정", $(this).siblings('.content_review').text());
+ // document.getElementsByClassName("modify_btn").innerHTML = txt;
 });
 
 
