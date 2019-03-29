@@ -1,3 +1,10 @@
+$(function(){
+  if(localStorage.getItem("my_name") == null){
+      alert("로그인이 필요한 서비스 입니다.");
+      window.open("opening.html","_self");
+  }
+});
+
 function load(){
   for(var i of Object.keys(localStorage)){
     var check_m = JSON.parse(localStorage.getItem(i));
