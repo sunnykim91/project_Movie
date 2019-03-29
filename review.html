@@ -5,8 +5,7 @@
     <title>오늘 뭐 볼까? 오.까!</title>
 
 
-    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Pen+Script|Poor+Story" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Gaegu|Poor+Story" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -25,7 +24,10 @@
              background: linear-gradient(to bottom, rgba(27, 27, 27,1) 0%,rgba(155,155,155,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#9b9b9b',GradientType=1 ); /* IE6-9 */
         }
-       
+        .header-sticky {
+              background-color: rgba(0,0,0,1);
+              height: 7.7em;
+        }
      </style>
 
 </head>
@@ -43,20 +45,20 @@
         <a class="mdl-navigation__link" href="action.html">액션</a>
         <a class="mdl-navigation__link" href="crime.html">범죄/스릴러</a>
         <a class="mdl-navigation__link" href="horror.html">공포</a>
-
         <a class="mdl-navigation__link" href="romance.html">로맨스/드라마</a>
         <a class="mdl-navigation__link" href="fantasy_sf.html">판타지/SF</a>
         <a class="mdl-navigation__link" href="review.html">나의 리뷰</a>
       </nav>
     </div>
-
+    <div class="header-sticky">
+        <p id="page_title">나의 리뷰</p>
+        <hr>
+     </div>
     <main class="mdl-layout__content">
         <div class="page-content">
           <!-- Your content goes here -->
           <div class="container">
 
-              <p id="page_title">나의 리뷰</p>
-          <hr>
           <div id="show_review">
             <!--리뷰 하나씩 div 할당-->
             
@@ -71,16 +73,16 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">랜덤 영화 추천</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p>오늘은</p>
+            <p class="text1">오늘은</p>
+
             <h3 id="random_title"></h3>
 
-            <p>어때?</p>
+            <p class="text2">어때?</p>
 
           </div>
           <div class="modal-footer">
@@ -102,7 +104,6 @@ if(loadReview["review"] === "ok"){
       + '<button class="modify_btn"><i class="fas fa-pencil-alt"></i></button>'
       + '<button class="close_btn"><i class="far fa-times-circle"></i></button>'
       + '<span class="title_review"><em>'+ Object.keys(loadReview)[0]+'</em></span><br>'
-      
       + '<span class="content_review"><i class="fas fa-angle-double-right"></i>&nbsp;'+loadReview[key] +'</span><br>' 
       + '</div>';
 $("#show_review").append(x);
