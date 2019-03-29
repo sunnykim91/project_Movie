@@ -97,7 +97,8 @@
       padding: 0px;
       border-width: 0px;
     }
-    .fa-times-circle:before {
+    .fa-times-circle:before
+     {
         content: "\f057";
         position: absolute;
         color: red;
@@ -105,6 +106,37 @@
         top: 0.5em;
         font-size: 1.7em
     }
+    .modify_btn{
+      padding: 0px;
+      border-width: 0px;
+    }
+    button.modify_btn i.fa-pencil-alt{
+      position: absolute;
+      color: blue;
+      right: 2em;
+      top: 0.5em;
+      font-size: 1.7em
+    }
+    button.modify_btn_class i.fa-pencil-alt {
+          content: "\f303";
+        
+      }
+    .modify_text{
+      position: absolute;
+      top: 3em;
+      padding: 0px;
+      margin: 0px;
+    }
+    .modify_btn_class{
+      position: absolute;
+      left: 14.32em;
+      top: 3em;
+      padding: 0px;
+      margin: 0px;
+      width: 2em;
+      height: 2.1em;
+    }
+    
     .title_review {
         display:inline-block;
         font-size:2.5em;
