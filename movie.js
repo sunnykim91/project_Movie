@@ -1,3 +1,4 @@
+//sign-in function add to opening
 $(function(){
   if(localStorage.getItem("my_name") == null){
       alert("로그인이 필요한 서비스 입니다.");
@@ -5,6 +6,7 @@ $(function(){
   }
 });
 
+//checkbox complete sign appear
 function load(){
   for(var i of Object.keys(localStorage)){
     var check_m = JSON.parse(localStorage.getItem(i));
@@ -51,6 +53,7 @@ load();
         
     });
 
+//review button function
 $('#btn_review').click(function() {
   key = $(checkbox).parent().siblings().find(".card-title").html();
   var content = $("#textarea").val();
