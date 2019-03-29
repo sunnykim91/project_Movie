@@ -120,9 +120,11 @@ $('.close_btn').click(function() {
 $('.modify_btn').click(function(){
   
   $('.modify_btn').hide();
+  //$(this).siblings('.content_review').text("");
+
   var memory_content = $(this).siblings('.content_review').text();
   var y = '<div class="modify_review_div">'
-        + '<textarea class="modify_text">' + memory_content + '</textarea> '
+        + '<input class="modify_text" maxlength="50" val=' + memory_content + '>'
         + '<button class="modify_btn_class"><i class="fas fa-pencil-alt"></i></button>'
         + '</div>';
   //$(this).siblings('.content_review').val("");

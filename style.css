@@ -1,3 +1,5 @@
+    
+    
     #home {
         text-align: center;
     }
@@ -112,7 +114,7 @@
     }
     button.modify_btn i.fa-pencil-alt{
       position: absolute;
-      color: blue;
+      color: skyblue;
       right: 2em;
       top: 0.5em;
       font-size: 1.7em
@@ -126,17 +128,19 @@
       top: 3em;
       padding: 0px;
       margin: 0px;
+      width: 85%;
+      height: 38%;
     }
     .modify_btn_class{
       position: absolute;
-      left: 14.32em;
+      right : 1em;
       top: 3em;
       padding: 0px;
       margin: 0px;
       width: 2em;
-      height: 2.1em;
+      height: 2.4em;
     }
-    
+   
     .title_review {
         display:inline-block;
         font-size:2.5em;
@@ -148,6 +152,8 @@
         -webkit-text-fill-color: transparent;
     }
     .content_review {
+      word-break:break-all;
+      padding-right: 2em;
         display:inline-block;
         font-size:2em;
         padding-left: 2em;
