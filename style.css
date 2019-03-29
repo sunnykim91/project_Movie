@@ -1,3 +1,5 @@
+    
+    
     #home {
         text-align: center;
     }
@@ -6,7 +8,7 @@
     }
     .info_bodytext {
         margin:1em;
-        font-family: 'Noto Sans KR', sans-serif;
+        font-family: 'Poor Story', cursive;
         font-size:1.5em;
     }
     .how_to_use {
@@ -112,7 +114,7 @@
     }
     button.modify_btn i.fa-pencil-alt{
       position: absolute;
-      color: blue;
+      color: skyblue;
       right: 2em;
       top: 0.5em;
       font-size: 1.7em
@@ -126,48 +128,50 @@
       top: 3em;
       padding: 0px;
       margin: 0px;
+      width: 85%;
+      height: 38%;
     }
     .modify_btn_class{
       position: absolute;
-      left: 14.32em;
+      right : 1em;
       top: 3em;
       padding: 0px;
       margin: 0px;
       width: 2em;
-      height: 2.1em;
+      height: 2.4em;
     }
-    
+   
     .title_review {
         display:inline-block;
         font-size:2.5em;
         padding: 0.5em;
         font-family: 'Do Hyeon', sans-serif;
         color:#8ccacc;
-        
-        background: -webkit-linear-gradient(rgb(224, 45, 45),pink);
+        background: -webkit-linear-gradient(#aba7e4,rgb(255, 255, 255));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
     .content_review {
+      word-break:break-all;
+      padding-right: 2em;
         display:inline-block;
         font-size:2em;
         padding-left: 2em;
         margin:0.5em 0;
+        font-family: 'Poor Story', cursive;
     }
     .modal-body {
         text-align: center;
     }
     #random_title {
         color:rgb(103, 61, 116);
+
     }
-    .text1 {
-        font-size:2em;
+    .text1, .text2 {
+        font-size:1.5em;
+        font-family: 'Gaegu', cursive;
     }
-    .text2 {
-        font-size: 2em;
-        margin:0.5em 0;
-        font-family: 'Poor Story', cursive;
-    }
+    
     .mdl-layout__content{
       background: #2f2f2f;
       color:white;
@@ -183,7 +187,8 @@
       padding-left: 20px;
   }
   #random_title{
-    color:deeppink;
+    color:#814ab4;
+    font-family: 'YiSunShinDotumM';
   }
 
 
@@ -201,4 +206,5 @@
     background-color: #2b2b2b;
     border:none;
   }
+  
   @font-face { font-family: 'YiSunShinDotumM'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YiSunShinDotumM.woff') format('woff'); font-weight: normal; font-style: normal; }
