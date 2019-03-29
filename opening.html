@@ -71,11 +71,17 @@
             $(".btn.btn-outline-secondary.submit1").click(function(e){
             e.preventDefault;
             var myName = document.getElementById("sample1").value;
-            localStorage.setItem("my_name",JSON.stringify(myName));
-            $('#nameForm').remove();
-            alert("환영합니다!");
-            $('#n').text('Hello, '+myName+'.');
-            window.open("info.html", "_blank");
+            var nameReg = /[가-힣a-zA-Z]{1,10}/;
+            if(!nameReg.test(myName)){
+                alert("이름은 비워둘 수 없습니다.\n"
+                      +"이름은 한글/영어 한 글자 이상이어야 합니다.");
+            }else{
+                localStorage.setItem("my_name",JSON.stringify(myName));
+                $('#nameForm').remove();
+                alert("환영합니다!");
+                $('#n').text('Hello, '+myName+'.');
+                window.open("info.html", "_blank");
+            }
             });
 
         }else if(localStorage.getItem("my_name") !== null){
