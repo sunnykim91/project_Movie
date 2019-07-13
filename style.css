@@ -1,0 +1,245 @@
+    
+    
+    #home {
+        text-align: center;
+    }
+    #profile {
+        text-align: center;
+    }
+    .info_bodytext {
+        margin:1em;
+        font-family: 'Poor Story', cursive;
+        font-size:1.5em;
+    }
+    .how_to_use {
+        height:400px;
+    }
+    .btn_random_img {
+        height:200px;
+        margin:1em;
+    }
+    .container {
+        margin-top: 2%;
+        
+
+    }
+  #page_title{
+    padding-left: 5.5em;
+    padding-top: 0.8em;
+    color: white;
+  }
+
+    
+
+   .header-sticky{
+      position: sticky;
+      top:0px;
+      background-color:#2f2f2f;
+    }
+    .card-img-top {
+        height: 420px;
+        position: relative;
+    }
+    #wat_logo {
+      height: 168px;
+      margin-top: 15%;
+    }
+    #btn_random {
+      align-self: center;
+      width:13em;
+      margin: 15px 0;
+    }
+    .card-deck {
+        margin-top: 2%;
+    }
+    .card-title{
+      font-family: 'YiSunShinDotumM';
+      font-size: 2em;
+    }
+    .card-text{
+      color:rgb(255, 169, 169);
+    }
+    .card {
+      width: 295px;
+      background-color:black;
+    }
+    .card-body {
+      height: 235px;
+
+    }
+    .checkBox{
+      position:absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .complete-img{
+      position: absolute;
+      width: 100%;
+      height: 50%;
+      top: 10%;
+    }
+    .mdl-dialog{
+      width: 500px;
+      height: 300px;
+    }
+    .modal-body{
+      text-align:center;
+    }
+    .input_review{
+      text-align: center;
+    }
+    .reviewcss{
+        position: relative;
+        margin: 1em;
+        padding: 1em;
+        line-height: 2em;
+        background-color:rgba(255,255,255,0.1);
+    }
+    .close_btn{
+      padding: 0px;
+      border-width: 0px;
+    }
+    .fa-times-circle:before
+     {
+        content: "\f057";
+        position: absolute;
+        color: red;
+        right: 0.5em;
+        top: 0.5em;
+        font-size: 1.7em
+    }
+    .modify_btn{
+      padding: 0px;
+      border-width: 0px;
+    }
+    button.modify_btn i.fa-pencil-alt{
+      position: absolute;
+      color: skyblue;
+      right: 2em;
+      top: 0.5em;
+      font-size: 1.7em
+    }
+    button.modify_btn_class i.fa-pencil-alt {
+          content: "\f303";
+        
+      }
+    .modify_text{
+      position: absolute;
+      top: 3em;
+      padding: 0px;
+      margin: 0px;
+      width: 85%;
+      height: 38%;
+    }
+    .modify_btn_class{
+      position: absolute;
+      right : 1em;
+      top: 3em;
+      padding: 0px;
+      margin: 0px;
+      width: 2em;
+      height: 2.4em;
+    }
+   
+    .title_review {
+        display:inline-block;
+        font-size:2.5em;
+        padding: 0.5em;
+        font-family: 'Do Hyeon', sans-serif;
+        color:#8ccacc;
+        background: -webkit-linear-gradient(#aba7e4,rgb(255, 255, 255));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .content_review {
+      word-break:break-all;
+      padding-right: 2em;
+        display:inline-block;
+        font-size:2em;
+        padding-left: 2em;
+        margin:0.5em 0;
+        font-family: 'Poor Story', cursive;
+    }
+    .modal-body {
+        text-align: center;
+    }
+    #random_title {
+        color:rgb(103, 61, 116);
+
+    }
+    .text1, .text2 {
+        font-size:1.5em;
+        font-family: 'Gaegu', cursive;
+    }
+    
+    .mdl-layout__content{
+      background: #2f2f2f;
+      color:white;
+      padding:30px 30px;
+    }
+    #page_title{
+      font-size: 50px;
+      font-family: 'Do Hyeon', sans-serif;
+      text-shadow: 0px 0px 12px #6ef5f9;
+      margin-bottom: 40px;
+    }
+  .mdl-layout__drawer>.mdl-layout__title, .mdl-layout__drawer>.mdl-layout-title {
+      padding-left: 20px;
+  }
+  #random_title{
+    color:#814ab4;
+    font-family: 'YiSunShinDotumM';
+  }
+
+
+  .trailer{
+    color: rgb(214, 214, 214);
+    border: 1px solid #656565;
+    padding: 5px;
+  }
+  .trailer:hover, .trailer:visited{
+    text-decoration: none;
+    color:rgb(214, 214, 214);
+  }
+  .btn-light {
+    color: #ffffff;
+    background-color: #2b2b2b;
+    border:none;
+  }
+  .video-popup.reveal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index:9
+  }
+  
+  .video-popup .video-wrapper {
+    position: relative;
+    width: 60%;
+    padding-bottom: 45%;
+    z-index: 10
+  }
+  
+  .video-popup .video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 10%;
+  }
+  .video-popup.reveal .video-popup-closer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 9
+  } 
+  
+  .pointer {cursor: pointer;}
+  @font-face { font-family: 'YiSunShinDotumM'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YiSunShinDotumM.woff') format('woff'); font-weight: normal; font-style: normal; }

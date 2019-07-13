@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>오늘 뭐 볼까? 오.까!</title>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Gaegu|Poor+Story" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .mdl-layout__content{
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,9b9b9b+100 */
+             background: rgb(0,0,0); /* Old browsers */
+             background: -moz-linear-gradient(top, rgb(27, 27, 27) 0%, rgba(155,155,155,1) 100%); /* FF3.6-15 */
+             background: -webkit-linear-gradient(top, rgba(27, 27, 27,1) 0%,rgba(155,155,155,1) 100%); /* Chrome10-25,Safari5.1-6 */
+             background: linear-gradient(to bottom, rgba(27, 27, 27,1) 0%,rgba(155,155,155,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#9b9b9b',GradientType=1 ); /* IE6-9 */
+        }
+        .header-sticky {
+              background-color: rgba(0,0,0,1);
+              height: 7.7em;
+        }
+     </style>
+
+</head>
+
+
+<body>
+    <!-- No header, and the drawer stays open on larger screens (fixed drawer). -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title"><a href="info.html"><img src="오까.png" alt="logo" id=wat_logo></a></span>
+      <nav class="mdl-navigation">
+
+
+        <button type="button" class="btn btn-outline-info" id="btn_random" data-toggle="modal" data-target="#exampleModalCenter">오늘은 이거다! 랜덤영화</button>
+        <a class="mdl-navigation__link" href="action.html">액션</a>
+        <a class="mdl-navigation__link" href="crime.html">범죄/스릴러</a>
+        <a class="mdl-navigation__link" href="horror.html">공포</a>
+        <a class="mdl-navigation__link" href="romance.html">로맨스/드라마</a>
+        <a class="mdl-navigation__link" href="fantasy_sf.html">판타지/SF</a>
+        <a class="mdl-navigation__link" href="review.html">나의 리뷰</a>
+      </nav>
+    </div>
+    <div class="header-sticky">
+        <p id="page_title">나의 리뷰</p>
+        <hr>
+     </div>
+    <main class="mdl-layout__content">
+        <div class="page-content">
+          <!-- Your content goes here -->
+          <div class="container">
+
+          <div id="show_review">
+            <!--리뷰 하나씩 div 할당-->
+            
+          </div>
+            </div>
+        </div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="text1">오늘은</p>
+            <h3 id="random_title"></h3>
+            <p class="text2">어때?</p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="random_movie">랜덤 영화 뽑기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript">
+
+
+for (var key of Object.keys(localStorage)){
+var loadReview = JSON.parse(localStorage.getItem(key));
+if(loadReview["review"] === "ok"){
+ var x = '<div class="reviewcss">'
+      + '<button class="modify_btn"><i class="fas fa-pencil-alt"></i></button>'
+      + '<button class="close_btn"><i class="far fa-times-circle"></i></button>'
+      + '<span class="title_review"><em>'+ Object.keys(loadReview)[0]+'</em></span><br>'
+      + '<span class="content_review"><i class="fas fa-angle-double-right"></i>&nbsp;'+loadReview[key] +'</span><br>' 
+      + '</div>';
+$("#show_review").append(x);
+ }
+// console.log(Object.keys(loadReview)[0]);
+//console.log(loadReview[key]);
+}
+
+$('.close_btn').click(function() {
+  $(this).parent().remove();
+  localStorage.removeItem($(this).siblings('.title_review').text());
+});
+
+$('.modify_btn').click(function(){
+  
+  $('.modify_btn').hide();
+  //$(this).siblings('.content_review').text("");
+
+  var memory_content = $(this).siblings('.content_review').text();
+  var y = '<div class="modify_review_div">'
+        + '<input class="modify_text" maxlength="50" val=' + memory_content + '>'
+        + '<button class="modify_btn_class"><i class="fas fa-pencil-alt"></i></button>'
+        + '</div>';
+  //$(this).siblings('.content_review').val("");
+  $(this).siblings('.content_review').append(y);
+
+  $('.modify_btn_class').click(function(){
+    
+    var booltest = localStorage.getItem($(this).parent().parent().siblings('.title_review').text());
+    if( booltest != null ) {
+      var modiReview = {};
+      modiReview[$(this).parent().parent().siblings('.title_review').text()] = $(this).siblings(".modify_text").val();
+      modiReview['review'] = "ok";
+      var savemodiReview = JSON.stringify(modiReview);
+      localStorage.setItem($(this).parent().parent().siblings('.title_review').text(), savemodiReview);
+
+    }  
+    $('.modify_btn').show();
+    window.location.reload();
+    $(".modify_review_div").remove();
+    
+  });
+ // var txt =prompt("수정", $(this).siblings('.content_review').text());
+ // document.getElementsByClassName("modify_btn").innerHTML = txt;
+});
+
+
+</script>
+<script src="movie.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

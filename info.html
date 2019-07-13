@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>오늘 뭐 볼까? 오.까!</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Poor+Story|Gaegu" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <!-- No header, and the drawer stays open on larger screens (fixed drawer). -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title"><a href="info.html"><img src="오까.png" alt="logo" id=wat_logo></a></span>
+      <nav class="mdl-navigation">
+        <button type="button" class="btn btn-outline-info" id="btn_random" data-toggle="modal" data-target="#exampleModalCenter">오늘은 이거다! 랜덤영화</button>
+        <a class="mdl-navigation__link" href="action.html">액션</a>
+        <a class="mdl-navigation__link" href="crime.html">범죄/스릴러</a>
+        <a class="mdl-navigation__link" href="horror.html">공포</a>
+        <a class="mdl-navigation__link" href="romance.html">로맨스/드라마</a>
+        <a class="mdl-navigation__link" href="fantasy_sf.html">판타지/SF</a>
+        <a class="mdl-navigation__link" href="review.html">나의 리뷰</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+        <div class="page-content">
+          <!-- Your content goes here -->
+          <div class="container">
+            <p id="page_title">오늘은 뭐 볼까? 이용방법</p>
+            <hr>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">페이지 사용법</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">랜덤 버튼 사용법</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <p class="info_bodytext">
+                                오늘은 뭐 볼까? 오.까?를 방문해주신 여러분 환영합니다.<br>
+                                여기에서는 여러분의 즐거운 문화생활을 돕기 위한 개인 영화 블로그를 체험하실 수 있습니다.
+                            </p>
+                            <img class="how_to_use" src="image/screenshot2.png">
+                            <p class= "info_bodytext">
+                                영화 카테고리를 선택하고 들어가시면 위와 같은 화면을 보실 수 있습니다
+                            </p>
+                            <img class="how_to_use" src="image/screenshot3.png">
+                            <p class="info_bodytext">
+                                각 영화 소개창을 보시면 우측상단에 리뷰 아이콘을 확인하실 수 있습니다.<br>
+                                이 아이콘을 클릭하시면 리뷰를 남기실 수 있습니다.
+                            </p>
+                            <img class="how_to_use" src="image/screenshot4.png">
+                            <p class="info_bodytext">
+                                아이콘을 클릭하시면 위와 같은 리뷰창을 확인하실 수 있습니다.<br>
+                                리뷰란에 리뷰를 적으시고 '리뷰남기기' 버튼을 누르시면 
+                            </p>
+                            <img class="how_to_use" src="image/screenshot1.png">
+                            <p class="info_bodytext">
+                                각 영화에 체크표시가 남게됩니다.
+                            </p>
+                            <img class="how_to_use" src="image/screenshot6.png">
+                            <p class="info_bodytext">
+                                메뉴의 맨 아래에는 '나의 리뷰'링크가 있으며, 이 링크를 클릭하시면
+                            </p>
+                            <img class="how_to_use" src="image/screenshot5.png">
+                            <p class="info_bodytext">
+                                여러분이 지금까지 저장한 리뷰를 한 번에 확인하실 수 있습니다.
+                            </p>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <img class="btn_random_img" src="image/screenshot7.png">
+                            <p class="info_bodytext">
+                                '오늘은 이거다! 랜덤영화' 버튼을 누르시면 랜덤영화를 추천받을 수 있는 창을 확인하실 수 있습니다.
+                            </p>
+                            <img class="btn_random_img" src="image/screenshot8.png">
+                            <img class="btn_random_img" src="image/screenshot9.png">
+                            <p class="info_bodytext">
+                                '랜덤 영화 뽑기'를 눌러 영화 추천을 받으세요!
+                            </p>
+                            
+                    </div>
+                  </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="text1">오늘은</p>
+            <h3 id="random_title"></h3>
+            <p class="text2">어때?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="random_movie">랜덤 영화 뽑기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+<script src="movie.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
